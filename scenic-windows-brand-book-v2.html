@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scenic Windows — Brand Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --midnight: #0B1E33;
+    --midnight-900: #060F1C;
+    --midnight-700: #122A47;
+    --midnight-600: #1B3960;
+    --midnight-500: #2C4E7A;
+    --paper: #F4EFE6;
+    --bone: #EAE3D5;
+    --brass: #B08544;
+    --brass-300: #D4B274;
+    --brass-200: #E7CC97;
+    --brass-500: #8A6630;
+    --brass-600: #5E4520;
+    --white: #FFFFFF;
+    --sage: #5C6E5A;
+    --terra: #A85638;
+    --fog: #C9D2DA;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { font-family: var(--sans); background: var(--paper); color: var(--midnight); }
+  body { margin: 0; }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--midnight);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--brass);
+  }
+  .cover-meta {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--brass-300);
+    text-transform: uppercase;
+  }
+  .cover-center {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .cover-logo-mark {
+    width: 72px;
+    height: 80px;
+  }
+  .cover-wordmark {
+    font-family: var(--serif);
+    font-size: 64px;
+    letter-spacing: 0.3em;
+    color: var(--white);
+    font-weight: 400;
+  }
+  .cover-sub {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: var(--brass);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .cover-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--brass-200);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-top: 16px;
+  }
+  .cover-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .cover-doc {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .corner-bracket {
+    width: 24px;
+    height: 24px;
+    border-color: var(--brass);
+    border-style: solid;
+  }
+  .corner-tl { border-width: 2px 0 0 2px; }
+  .corner-br { border-width: 0 2px 2px 0; }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 960px; margin: 0 auto; padding: 80px 64px; }
+  .page-wide { max-width: 100%; }
+
+  /* ── SECTION HEADER ── */
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .eyebrow-rule {
+    width: 32px;
+    height: 2px;
+    background: var(--brass);
+    flex-shrink: 0;
+  }
+  .eyebrow-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--brass);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .section-number {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--brass);
+    font-weight: 600;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .display-1 { font-family: var(--serif); font-size: 72px; line-height: 1.05; font-weight: 500; letter-spacing: -0.02em; }
+  .display-2 { font-family: var(--serif); font-size: 56px; line-height: 1.08; font-weight: 500; letter-spacing: -0.02em; }
+  .display-3 { font-family: var(--serif); font-size: 40px; line-height: 1.12; font-weight: 500; letter-spacing: -0.01em; }
+  .h2 { font-family: var(--serif); font-size: 32px; line-height: 1.2; font-weight: 500; letter-spacing: -0.005em; }
+  .lede { font-family: var(--sans); font-size: 18px; line-height: 1.6; font-weight: 400; color: #3a4f63; }
+  .body-text { font-family: var(--sans); font-size: 15px; line-height: 1.65; font-weight: 400; color: #4a5f72; }
+  .caption { font-family: var(--sans); font-size: 11px; letter-spacing: 0.1em; color: #8a9aaa; text-transform: uppercase; }
+  .italic-brass { font-family: var(--serif); font-style: italic; color: var(--brass); }
+  .divider { border: none; border-top: 1px solid rgba(11,30,51,0.12); margin: 48px 0; }
+  p + p { margin-top: 1em; }
+
+  /* ── NAVY PANEL ── */
+  .navy-panel {
+    background: var(--midnight);
+    padding: 80px 64px;
+  }
+  .navy-panel .lede { color: rgba(255,255,255,0.7); }
+  .navy-panel .body-text { color: rgba(255,255,255,0.6); }
+  .navy-panel h2, .navy-panel .display-2, .navy-panel .display-3 { color: var(--white); }
+
+  /* ── FULL-BLEED PHOTO ── */
+  .photo-full {
+    width: 100%;
+    aspect-ratio: 16/7;
+    object-fit: cover;
+    display: block;
+    background: var(--midnight-700);
+    position: relative;
+  }
+  .photo-caption {
+    background: rgba(11,30,51,0.85);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    display: inline-block;
+  }
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 16/7;
+    background: linear-gradient(135deg, #122A47 0%, #0B1E33 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+
+  /* ── FEATURE GRID ── */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(11,30,51,0.15);
+    border: 1px solid rgba(11,30,51,0.15);
+  }
+  .feature-cell {
+    background: var(--midnight);
+    padding: 40px 36px;
+  }
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid var(--brass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .feature-icon svg { width: 22px; height: 22px; stroke: var(--brass); fill: none; stroke-width: 1.5; stroke-linecap: square; }
+  .feature-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    color: var(--brass);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .feature-body { font-family: var(--sans); font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.65); }
+
+  /* ── MANIFESTO ── */
+  .manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .manifesto-left .display-2 { color: var(--midnight); line-height: 1.1; }
+  .manifesto-right .body-text { font-size: 16px; line-height: 1.75; }
+
+  /* ── LOGO SECTION ── */
+  .logo-panel {
+    background: var(--paper);
+    border: 1px solid rgba(11,30,51,0.12);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 2px;
+  }
+  .logo-panel-dark { background: var(--midnight); }
+  .logo-panel-brass { background: var(--brass); }
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .wm-scenic {
+    font-family: var(--serif);
+    letter-spacing: 0.28em;
+    font-weight: 400;
+  }
+  .wm-windows {
+    font-family: var(--sans);
+    letter-spacing: 0.35em;
+    font-weight: 400;
+    font-size: 0.42em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* ── COLOR SWATCHES ── */
+  .swatch-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 32px 0; }
+  .swatch { padding: 48px 24px 20px; }
+  .swatch-name { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+  .swatch-hex { font-family: 'Courier New', monospace; font-size: 12px; opacity: 0.8; }
+  .swatch-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.6; margin-bottom: 12px; }
+  .scale-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+  .scale-chip { padding: 32px 20px 16px; }
+  .scale-stop { font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; margin-bottom: 6px; opacity: 0.7; }
+  .scale-hex { font-family: 'Courier New', monospace; font-size: 13px; font-weight: 500; }
+
+  /* ── TYPOGRAPHY SCALE ── */
+  .type-specimen {
+    border-top: 2px solid var(--brass);
+    padding: 32px 0;
+    margin-bottom: 2px;
+  }
+  .type-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; color: var(--brass); font-weight: 600; text-transform: uppercase; margin-bottom: 16px; }
+  .type-spec { font-family: var(--sans); font-size: 11px; color: rgba(11,30,51,0.5); margin-bottom: 12px; }
+
+  /* ── VOICE ── */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 48px 0; }
+  .voice-number { font-family: var(--sans); font-size: 11px; letter-spacing: 0.1em; color: var(--brass); font-weight: 600; margin-bottom: 12px; }
+  .voice-heading { font-family: var(--serif); font-size: 32px; font-weight: 500; margin-bottom: 12px; }
+  .voice-heading .italic-brass { font-size: inherit; }
+  .voice-body { font-family: var(--sans); font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.65); }
+
+  /* ── BEFORE/AFTER ── */
+  .ba-pair { margin: 32px 0; }
+  .ba-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+  .ba-off { color: var(--terra); background: rgba(168,86,56,0.1); border-left: 3px solid var(--terra); padding: 12px 16px; font-size: 14px; line-height: 1.5; margin-bottom: 2px; }
+  .ba-on { color: #1f3a1a; background: rgba(92,110,90,0.1); border-left: 3px solid var(--sage); padding: 12px 16px; font-size: 14px; line-height: 1.5; }
+
+  /* ── WORD LISTS ── */
+  .word-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .word-col-label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em; color: var(--brass); font-weight: 600; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid var(--brass); }
+  .word-list { list-style: none; }
+  .word-list li { font-family: var(--serif); font-size: 18px; font-weight: 400; padding: 8px 0; border-bottom: 1px solid rgba(11,30,51,0.1); }
+  .word-list li.strike { text-decoration: line-through; opacity: 0.45; }
+
+  /* ── ICONS ── */
+  .icon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .icon-cell {
+    background: var(--midnight);
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .icon-cell-wide { grid-column: 1; }
+  .icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1.5px solid var(--brass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon-circle svg { width: 24px; height: 24px; stroke: var(--brass); fill: none; stroke-width: 1.5; stroke-linecap: square; }
+  .icon-name { font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em; color: var(--brass); font-weight: 600; text-transform: uppercase; }
+  .icon-desc { font-family: var(--sans); font-size: 12px; color: rgba(255,255,255,0.5); }
+
+  /* ── PHOTO GRID ── */
+  .photo-grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .photo-slot {
+    aspect-ratio: 4/3;
+    background: var(--midnight-700);
+    position: relative;
+    overflow: hidden;
+  }
+  .photo-slot img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-slot-label {
+    position: absolute;
+    bottom: 0; left: 0;
+    background: rgba(11,30,51,0.85);
+    color: rgba(255,255,255,0.9);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+  }
+  .photo-slot-num { color: var(--brass); margin-right: 6px; }
+
+  /* ── GRID LAYOUT ── */
+  .grid-demo { border: 1px dashed rgba(176,133,68,0.4); padding: 24px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; margin: 32px 0; }
+  .grid-col { height: 120px; background: rgba(176,133,68,0.08); border: 1px dashed rgba(176,133,68,0.2); }
+  .grid-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 40px 0; }
+  .grid-stat { border-top: 2px solid var(--brass); padding-top: 16px; }
+  .grid-stat-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(11,30,51,0.5); margin-bottom: 8px; }
+  .grid-stat-value { font-family: var(--serif); font-size: 40px; font-weight: 500; line-height: 1; }
+  .grid-stat-unit { font-family: var(--sans); font-size: 16px; font-weight: 400; color: rgba(11,30,51,0.5); margin-left: 4px; }
+  .spacing-bar-row { display: flex; align-items: flex-end; gap: 16px; margin-top: 32px; }
+  .spacing-col { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .spacing-bar { background: var(--brass); width: 32px; }
+  .spacing-val { font-size: 11px; color: rgba(11,30,51,0.5); }
+
+  /* ── COMPONENTS ── */
+  .btn-primary { background: var(--brass); color: var(--white); border: none; padding: 12px 20px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.15em; font-weight: 600; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; border-radius: 2px; }
+  .btn-outline { background: transparent; color: var(--midnight); border: 1.5px solid var(--midnight); padding: 11px 20px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.15em; font-weight: 600; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; border-radius: 2px; }
+  .btn-ghost { background: transparent; color: var(--midnight); border: none; padding: 11px 20px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.15em; font-weight: 600; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; border-radius: 2px; text-decoration: underline; text-underline-offset: 3px; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 24px 0; }
+
+  .card-editorial {
+    background: var(--white);
+    border: 1px solid rgba(11,30,51,0.1);
+    border-top: 2px solid var(--brass);
+    padding: 28px;
+  }
+  .card-eyebrow { font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; color: var(--brass); font-weight: 600; text-transform: uppercase; display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .card-eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--brass); flex-shrink: 0; }
+  .card-heading { font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+  .card-body { font-size: 13px; line-height: 1.6; color: rgba(11,30,51,0.65); }
+  .cards-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+
+  /* ── TRUST BADGES ── */
+  .trust-grid { display: grid; grid-template-columns: 1fr 1fr; background: var(--midnight); }
+  .trust-cell {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .trust-icon svg { width: 28px; height: 28px; stroke: var(--brass); fill: none; stroke-width: 1.5; stroke-linecap: square; }
+  .trust-label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.22em; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; text-align: center; }
+
+  /* ── MOTION CARDS ── */
+  .motion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
+  .motion-card { border-top: 2px solid var(--brass); padding: 28px; background: var(--white); border: 1px solid rgba(11,30,51,0.1); border-top: 2px solid var(--brass); }
+  .motion-card.wide { grid-column: 1; }
+  .motion-ms { font-family: var(--serif); font-size: 48px; font-weight: 500; }
+  .motion-unit { font-size: 20px; color: rgba(11,30,51,0.5); }
+  .motion-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); font-weight: 600; margin: 8px 0 10px; }
+  .motion-desc { font-size: 13px; line-height: 1.6; color: rgba(11,30,51,0.6); }
+
+  .ease-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .ease-box { border-top: 1px solid rgba(11,30,51,0.15); padding-top: 20px; }
+  .ease-name { font-family: var(--sans); font-size: 11px; letter-spacing: 0.15em; font-weight: 600; color: var(--brass); text-transform: uppercase; margin-bottom: 8px; }
+  .ease-code { font-family: 'Courier New', monospace; font-size: 12px; color: rgba(11,30,51,0.6); margin-bottom: 8px; }
+  .ease-desc { font-size: 13px; color: rgba(11,30,51,0.6); }
+
+  /* ── APPLICATIONS ── */
+  .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 40px 0; }
+  .biz-card {
+    background: var(--midnight);
+    padding: 28px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-column: 1 / -1;
+    border-top: 2px solid var(--brass);
+  }
+  .biz-card-left { display: flex; flex-direction: column; gap: 4px; }
+  .biz-name { font-family: var(--serif); font-size: 20px; color: var(--white); font-weight: 400; }
+  .biz-role { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; color: var(--brass); font-weight: 600; text-transform: uppercase; }
+  .biz-right { text-align: right; }
+  .biz-contact { font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.8; }
+
+  .instagram-tile {
+    background: var(--midnight);
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+    position: relative;
+  }
+  .instagram-tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6,15,28,0.9) 0%, transparent 60%);
+  }
+  .instagram-content { position: relative; z-index: 1; }
+
+  .email-mock {
+    background: var(--white);
+    border: 1px solid rgba(11,30,51,0.1);
+    padding: 32px;
+  }
+  .email-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(11,30,51,0.1); }
+
+  .sticker {
+    border: 1.5px solid var(--brass);
+    padding: 20px 24px;
+    text-align: center;
+    display: inline-block;
+  }
+  .sticker-top { font-family: var(--sans); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); font-weight: 600; margin-bottom: 8px; }
+  .sticker-model { font-family: var(--serif); font-size: 32px; font-weight: 500; }
+  .sticker-model span { font-family: var(--sans); font-size: 18px; color: var(--brass); }
+  .sticker-spec { font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; margin-top: 8px; color: rgba(11,30,51,0.6); }
+  .sticker-sn { font-family: var(--sans); font-size: 9px; color: rgba(11,30,51,0.4); margin-top: 10px; border-top: 1px solid rgba(11,30,51,0.1); padding-top: 8px; }
+
+  /* ── COLOPHON ── */
+  .colophon { background: var(--midnight-900); padding: 80px 64px; }
+  .colophon-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 64px; margin-top: 48px; }
+  .colophon-col-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; color: var(--brass); font-weight: 600; text-transform: uppercase; margin-bottom: 16px; }
+  .colophon-text { font-family: var(--sans); font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.5); }
+  .colophon-text a { color: var(--brass-300); text-decoration: none; }
+  .colophon-text strong { color: rgba(255,255,255,0.7); font-weight: 500; }
+
+  /* ── BACK COVER ── */
+  .back-cover {
+    background: var(--midnight);
+    padding: 32px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(176,133,68,0.3);
+  }
+  .back-cover-text { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; color: rgba(255,255,255,0.3); text-transform: uppercase; }
+
+  /* misuse */
+  .misuse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .misuse-cell { background: var(--paper); border: 1px solid rgba(11,30,51,0.1); padding: 32px; position: relative; }
+  .misuse-x { position: absolute; top: 12px; right: 12px; width: 22px; height: 22px; background: #c0392b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 13px; font-weight: 700; }
+  .misuse-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(11,30,51,0.45); margin-top: 16px; }
+
+  /* proportion bar */
+  .proportion-bar { display: grid; grid-template-columns: 5fr 3fr 2fr; height: 56px; margin: 32px 0; }
+  .prop-seg { display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 11px; letter-spacing: 0.15em; font-weight: 600; text-transform: uppercase; }
+  .prop-navy { background: var(--midnight); color: rgba(255,255,255,0.8); }
+  .prop-paper { background: var(--paper); color: rgba(11,30,51,0.7); border-top: 1px solid rgba(11,30,51,0.15); border-bottom: 1px solid rgba(11,30,51,0.15); }
+  .prop-brass { background: var(--brass); color: var(--white); }
+
+  .prop-desc { border-top: 1px solid rgba(11,30,51,0.12); padding: 20px 0; }
+  .prop-desc-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; color: var(--brass); font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+  .prop-desc-body { font-family: var(--sans); font-size: 14px; line-height: 1.6; color: rgba(11,30,51,0.65); }
+
+  /* mode diagrams */
+  .mode-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .mode-cell { background: var(--paper); border: 1px solid rgba(11,30,51,0.12); padding: 40px 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .mode-diagram svg { width: 64px; height: 80px; }
+  .mode-name { font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em; color: var(--midnight); font-weight: 600; text-transform: uppercase; }
+  .mode-desc { font-size: 12px; color: rgba(11,30,51,0.55); text-align: center; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     COVER
+══════════════════════════════════════════ -->
+<div class="cover">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div class="cover-meta">S C E N I C &nbsp; W I N D O W S &nbsp; · &nbsp; B R A N D &nbsp; V O L U M E &nbsp; 0 1 &nbsp; · &nbsp; E D I T I O N &nbsp; 2 0 2 6</div>
+    <div class="corner-bracket corner-tl" style="width:20px;height:20px;"></div>
+  </div>
+  <div class="cover-center">
+    <svg class="cover-logo-mark" viewBox="0 0 72 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="68" height="76" stroke="white" stroke-width="1.5"/>
+      <rect x="12" y="12" width="48" height="56" stroke="white" stroke-width="1.5"/>
+      <line x1="60" y1="40" x2="68" y2="40" stroke="#B08544" stroke-width="1.5"/>
+    </svg>
+    <div>
+      <div class="cover-wordmark">SCENIC</div>
+      <div class="cover-sub">W I N D O W S</div>
+    </div>
+    <div class="cover-title">Brand &amp; Guidelines</div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-doc">
+      <div>I S S U E D &nbsp;&nbsp; 14 · 05 · 2026</div>
+      <div style="margin-top:4px;">D O C &nbsp;&nbsp; SW-BR-001 &nbsp; · &nbsp; R E V &nbsp; 1.1</div>
+      <div style="margin-top:4px;">P A G E S &nbsp;&nbsp; 14 &nbsp; S E C T I O N S</div>
+    </div>
+    <div class="corner-bracket corner-br" style="width:20px;height:20px;"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CONTENTS
+══════════════════════════════════════════ -->
+<div class="page">
+  <p class="body-text" style="margin-bottom:32px;">A reference for everyone who makes Scenic Windows look like Scenic Windows.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+    <div>
+      <div style="border-top:2px solid var(--brass);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">01</span><span>ESSENCE</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">02</span><span>LOGO</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">03</span><span>CLEAR SPACE</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">04</span><span>MISUSE</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">05</span><span>COLOR</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">06</span><span>50 · 30 · 20</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">07</span><span>TYPOGRAPHY</span>
+      </div>
+    </div>
+    <div>
+      <div style="border-top:2px solid var(--brass);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">08</span><span>VOICE</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">09</span><span>ICONOGRAPHY</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">10</span><span>PHOTOGRAPHY</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">11</span><span>GRID</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">12</span><span>COMPONENTS</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">13</span><span>MOTION</span>
+      </div>
+      <div style="border-top:1px solid rgba(11,30,51,0.1);padding:20px 0 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid rgba(11,30,51,0.1);" class="body-text">
+        <span style="font-weight:600;color:var(--brass);">14</span><span>APPLICATIONS</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     01 ESSENCE
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <div class="eyebrow-rule"></div>
+    <span class="eyebrow-label">Essence</span>
+  </div>
+  <h1 class="display-1" style="margin-bottom:28px;">The window is the <span class="italic-brass">work.</span></h1>
+  <p class="lede" style="max-width:620px;margin-bottom:48px;">Scenic Windows manufactures precision-engineered aluminum window systems for North American residential architecture. We make engineered objects, and we let them be the hero. The brand is the frame around the frame.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+  <div class="feature-grid">
+    <div class="feature-cell">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </div>
+      <div class="feature-label">Engineered</div>
+      <p class="feature-body">Every claim is a measurable spec. Tolerances, U-values, thermal break depth, locking points. We earn the words before we use them.</p>
+    </div>
+    <div class="feature-cell">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+      </div>
+      <div class="feature-label">Performance-Led</div>
+      <p class="feature-body">We talk about what the window does, not how it feels in the showroom. Comfort, security, and energy are outcomes — never adjectives.</p>
+    </div>
+    <div class="feature-cell">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+      </div>
+      <div class="feature-label">Confident</div>
+      <p class="feature-body">Short tagline. Period. No qualifiers, no hedging, no excitement marks. The product is enough; the copy stays out of its way.</p>
+    </div>
+    <div class="feature-cell">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
+      </div>
+      <div class="feature-label">Specific</div>
+      <p class="feature-body">Numbers, units, materials, mechanisms. <em>34 mm polyamide</em> beats "advanced thermal." The detail is the design.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<div class="page" style="background:var(--bone);padding-top:64px;padding-bottom:80px;">
+  <div class="section-eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-label">Manifesto</span></div>
+  <div class="manifesto-grid">
+    <div class="manifesto-left">
+      <h2 class="display-2">One window.<br>Three modes. <span class="italic-brass">No compromise.</span></h2>
+    </div>
+    <div class="manifesto-right">
+      <p class="body-text" style="font-size:16px;line-height:1.8;">We were built around an idea that's older than most marketing categories: a window can be precise, beautiful, and quiet — and you shouldn't have to pick two. The tilt-turn is the proof. Polyamide is the proof. The frame finished in anthracite, sitting flush in the wall of a North American hillside residence, holding back forty degrees of weather without making a sound — that's the proof.</p>
+      <p class="body-text" style="font-size:16px;line-height:1.8;margin-top:20px;">Everything in this book — the typography, the brass rule above the eyebrow, the periods at the end of every tagline — exists to keep that proof visible.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PHOTO SPREAD -->
+<div style="position:relative;">
+  <div class="photo-placeholder">
+    <span class="photo-caption">R E S I D E N C E · S I E R R A M A D R E · 2 0 2 4</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     02 LOGO
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">02</span><div class="eyebrow-rule"></div><span class="eyebrow-label">The Mark</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">Logo &amp; lockups.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">The mark is a thin-line elevation of a tilt-turn window — outer frame, inner sash, side handle. It pairs with a wide-spaced <em>SCENIC</em> wordmark in Playfair Display caps and a tracked <em>WINDOWS</em> in DM Sans below.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+
+  <!-- Primary stacked -->
+  <div class="logo-panel" style="margin-bottom:2px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <svg width="56" height="64" viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.5" y="1.5" width="53" height="61" stroke="#0B1E33" stroke-width="1.5"/>
+        <rect x="9" y="9" width="38" height="46" stroke="#0B1E33" stroke-width="1.5"/>
+        <line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/>
+      </svg>
+      <div style="text-align:center;">
+        <div style="font-family:var(--serif);font-size:36px;letter-spacing:0.3em;font-weight:400;color:var(--midnight);">SCENIC</div>
+        <div style="font-family:var(--sans);font-size:13px;letter-spacing:0.4em;color:var(--midnight);margin-top:4px;">WINDOWS</div>
+      </div>
+    </div>
+    <span class="caption" style="align-self:flex-start;">Primary · Stacked</span>
+  </div>
+
+  <!-- Horizontal -->
+  <div class="logo-panel" style="margin-bottom:2px;">
+    <div style="display:flex;align-items:center;gap:20px;">
+      <svg width="40" height="48" viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.5" y="1.5" width="53" height="61" stroke="#0B1E33" stroke-width="1.5"/>
+        <rect x="9" y="9" width="38" height="46" stroke="#0B1E33" stroke-width="1.5"/>
+        <line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/>
+      </svg>
+      <div>
+        <div style="font-family:var(--serif);font-size:28px;letter-spacing:0.25em;font-weight:400;color:var(--midnight);">SCENIC</div>
+        <div style="font-family:var(--sans);font-size:11px;letter-spacing:0.4em;color:var(--midnight);margin-top:3px;">WINDOWS</div>
+      </div>
+    </div>
+    <span class="caption" style="align-self:flex-start;">Horizontal</span>
+  </div>
+
+  <!-- Mark only -->
+  <div class="logo-panel" style="margin-bottom:2px;">
+    <svg width="48" height="56" viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1.5" y="1.5" width="53" height="61" stroke="#0B1E33" stroke-width="1.5"/>
+      <rect x="9" y="9" width="38" height="46" stroke="#0B1E33" stroke-width="1.5"/>
+      <line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/>
+    </svg>
+    <span class="caption" style="align-self:flex-start;">Mark Only</span>
+  </div>
+
+  <!-- On Midnight Navy -->
+  <div class="logo-panel logo-panel-dark" style="margin-bottom:2px;">
+    <div style="display:flex;align-items:center;gap:20px;">
+      <svg width="40" height="48" viewBox="0 0 56 64" fill="none">
+        <rect x="1.5" y="1.5" width="53" height="61" stroke="#B08544" stroke-width="1.5"/>
+        <rect x="9" y="9" width="38" height="46" stroke="white" stroke-width="1.5"/>
+        <line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/>
+      </svg>
+      <div>
+        <div style="font-family:var(--serif);font-size:28px;letter-spacing:0.25em;font-weight:400;color:white;">SCENIC</div>
+        <div style="font-family:var(--sans);font-size:11px;letter-spacing:0.4em;color:var(--brass);margin-top:3px;">WINDOWS</div>
+      </div>
+    </div>
+    <span class="caption" style="align-self:flex-start;color:rgba(255,255,255,0.4);">On Midnight Navy</span>
+  </div>
+
+  <!-- On Brass -->
+  <div class="logo-panel logo-panel-brass">
+    <div style="display:flex;align-items:center;gap:20px;">
+      <svg width="40" height="48" viewBox="0 0 56 64" fill="none">
+        <rect x="1.5" y="1.5" width="53" height="61" stroke="white" stroke-width="1.5"/>
+        <rect x="9" y="9" width="38" height="46" stroke="white" stroke-width="1.5"/>
+        <line x1="47" y1="32" x2="55.5" y2="32" stroke="white" stroke-width="1.5"/>
+      </svg>
+      <div>
+        <div style="font-family:var(--serif);font-size:28px;letter-spacing:0.25em;font-weight:400;color:white;">SCENIC</div>
+        <div style="font-family:var(--sans);font-size:11px;letter-spacing:0.4em;color:white;margin-top:3px;opacity:0.8;">WINDOWS</div>
+      </div>
+    </div>
+    <span class="caption" style="align-self:flex-start;color:rgba(255,255,255,0.5);">On Brass Gold</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     03 CLEAR SPACE
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">03</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Construction</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">Clear space &amp; minimum size.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">The mark earns the page when it is given room. Reserve clear space equal to <em>x</em> — the height of the wordmark <em>S</em> — on all sides. Never set the logo smaller than the minimums below.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div style="border:1px solid rgba(11,30,51,0.1);padding:40px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <svg width="40" height="48" viewBox="0 0 56 64" fill="none"><rect x="1.5" y="1.5" width="53" height="61" stroke="#0B1E33" stroke-width="1.5"/><rect x="9" y="9" width="38" height="46" stroke="#0B1E33" stroke-width="1.5"/><line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/></svg>
+        <div><div style="font-family:var(--serif);font-size:22px;letter-spacing:0.25em;">SCENIC</div><div style="font-family:var(--sans);font-size:9px;letter-spacing:0.4em;margin-top:2px;">WINDOWS</div></div>
+      </div>
+      <div class="caption">160 px / 32 mm · Hero — Preferred</div>
+    </div>
+    <div style="border:1px solid rgba(11,30,51,0.1);padding:40px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="28" height="36" viewBox="0 0 56 64" fill="none"><rect x="1.5" y="1.5" width="53" height="61" stroke="#0B1E33" stroke-width="1.5"/><rect x="9" y="9" width="38" height="46" stroke="#0B1E33" stroke-width="1.5"/><line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/></svg>
+        <div><div style="font-family:var(--serif);font-size:16px;letter-spacing:0.25em;">SCENIC</div><div style="font-family:var(--sans);font-size:7px;letter-spacing:0.4em;margin-top:2px;">WINDOWS</div></div>
+      </div>
+      <div class="caption">96 px / 20 mm · Standard Application</div>
+    </div>
+    <div style="border:1px solid rgba(11,30,51,0.1);padding:40px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="18" height="24" viewBox="0 0 56 64" fill="none"><rect x="1.5" y="1.5" width="53" height="61" stroke="#0B1E33" stroke-width="1.5"/><rect x="9" y="9" width="38" height="46" stroke="#0B1E33" stroke-width="1.5"/><line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/></svg>
+        <div style="font-family:var(--serif);font-size:12px;letter-spacing:0.2em;">SCENIC</div>
+      </div>
+      <div class="caption">64 px / 14 mm · Minimum Lockup</div>
+    </div>
+    <div style="border:1px solid rgba(11,30,51,0.1);padding:40px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;">
+      <svg width="16" height="20" viewBox="0 0 56 64" fill="none"><rect x="1.5" y="1.5" width="53" height="61" stroke="#0B1E33" stroke-width="1.5"/><rect x="9" y="9" width="38" height="46" stroke="#0B1E33" stroke-width="1.5"/><line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/></svg>
+      <div class="caption">32 px / 8 mm · Mark Only — Favicon</div>
+    </div>
+  </div>
+  <p class="body-text" style="margin-top:24px;">When the lockup falls below 64 px wide, drop the <em>WINDOWS</em> subline first. When it falls below 32 px, use the mark alone. Never compress letterspacing to make the lockup fit.</p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     04 MISUSE
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">04</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Don'ts</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">Things the logo will never do.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">These six are not edge cases; they're the most common ways the mark drifts. If a layout asks for any of them, the answer is to change the layout.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+  <div class="misuse-grid">
+    <div class="misuse-cell"><div class="misuse-x">✕</div>
+      <div style="font-family:var(--serif);font-size:24px;letter-spacing:0.1em;transform:scaleX(1.4);transform-origin:left;display:inline-block;">SCENIC</div>
+      <div class="misuse-label">Do Not Stretch</div>
+    </div>
+    <div class="misuse-cell"><div class="misuse-x">✕</div>
+      <div style="font-family:var(--serif);font-size:24px;letter-spacing:0.25em;color:#c0392b;">SCENIC</div>
+      <div class="misuse-label">Do Not Recolor</div>
+    </div>
+    <div class="misuse-cell"><div class="misuse-x">✕</div>
+      <div style="font-family:var(--serif);font-size:24px;letter-spacing:0.25em;transform:rotate(-12deg);display:inline-block;margin:12px 0;">SCENIC</div>
+      <div class="misuse-label">Do Not Rotate</div>
+    </div>
+    <div class="misuse-cell"><div class="misuse-x">✕</div>
+      <div style="font-family:var(--serif);font-size:24px;letter-spacing:0.25em;text-shadow:3px 3px 8px rgba(0,0,0,0.4);">SCENIC</div>
+      <div class="misuse-label">Do Not Add Effects</div>
+    </div>
+    <div class="misuse-cell"><div class="misuse-x">✕</div>
+      <div style="font-family:var(--serif);font-size:24px;letter-spacing:0.02em;">SCENIC WINDOWS</div>
+      <div class="misuse-label">Do Not Crowd</div>
+    </div>
+    <div class="misuse-cell" style="background:var(--brass);"><div class="misuse-x">✕</div>
+      <div style="font-family:var(--serif);font-size:24px;letter-spacing:0.25em;color:rgba(255,255,255,0.35);">SCENIC</div>
+      <div class="misuse-label" style="color:rgba(255,255,255,0.4);">Do Not Low-Contrast</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     05 COLOR
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">05</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Palette</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">Midnight, paper, brass.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">Three colors carry the brand. Midnight Navy is the anchor surface. Warm Paper is the editorial canvas. Brass Gold is the focal — used for eyebrows, icons, the logo mark, primary CTAs, and editorial italics. Never anywhere else.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+  <div class="swatch-row">
+    <div class="swatch" style="background:var(--midnight);">
+      <div class="swatch-label" style="color:rgba(255,255,255,0.5);">Primary · 50%</div>
+      <div class="swatch-name" style="color:white;">Midnight Navy</div>
+      <div class="swatch-hex" style="color:rgba(255,255,255,0.6);">#0B1E33 · rgb 11 · 30 · 51<br>Pantone 539 C</div>
+    </div>
+    <div class="swatch" style="background:var(--paper);border:1px solid rgba(11,30,51,0.12);">
+      <div class="swatch-label">Secondary · 30%</div>
+      <div class="swatch-name">Paper</div>
+      <div class="swatch-hex">#F4EFE6 · rgb 244 · 239 · 230<br>warm off-white</div>
+    </div>
+    <div class="swatch" style="background:var(--brass);">
+      <div class="swatch-label" style="color:rgba(255,255,255,0.6);">Accent · 20%</div>
+      <div class="swatch-name" style="color:white;">Brass Gold</div>
+      <div class="swatch-hex" style="color:rgba(255,255,255,0.7);">#B08544 · rgb 176 · 133 · 68<br>Pantone 873 C</div>
+    </div>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top:32px;"><div class="eyebrow-rule"></div><span class="eyebrow-label">Midnight Scale</span></div>
+  <div class="scale-row">
+    <div class="scale-chip" style="background:#060F1C;"><div class="scale-stop" style="color:rgba(255,255,255,0.4);">900</div><div class="scale-hex" style="color:white;">#060F1C</div></div>
+    <div class="scale-chip" style="background:#0B1E33;"><div class="scale-stop" style="color:rgba(255,255,255,0.4);">800</div><div class="scale-hex" style="color:white;">#0B1E33</div></div>
+    <div class="scale-chip" style="background:#122A47;"><div class="scale-stop" style="color:rgba(255,255,255,0.4);">700</div><div class="scale-hex" style="color:white;">#122A47</div></div>
+    <div class="scale-chip" style="background:#1B3960;"><div class="scale-stop" style="color:rgba(255,255,255,0.4);">600</div><div class="scale-hex" style="color:white;">#1B3960</div></div>
+    <div class="scale-chip" style="background:#2C4E7A;"><div class="scale-stop" style="color:rgba(255,255,255,0.4);">500</div><div class="scale-hex" style="color:white;">#2C4E7A</div></div>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top:32px;"><div class="eyebrow-rule"></div><span class="eyebrow-label">Brass Scale</span></div>
+  <div class="scale-row">
+    <div class="scale-chip" style="background:#E7CC97;"><div class="scale-stop">200</div><div class="scale-hex">#E7CC97</div></div>
+    <div class="scale-chip" style="background:#D4B274;"><div class="scale-stop">300</div><div class="scale-hex">#D4B274</div></div>
+    <div class="scale-chip" style="background:#B08544;"><div class="scale-stop" style="color:rgba(255,255,255,0.5);">400 · Core</div><div class="scale-hex" style="color:white;">#B08544</div></div>
+    <div class="scale-chip" style="background:#8A6630;"><div class="scale-stop" style="color:rgba(255,255,255,0.5);">500</div><div class="scale-hex" style="color:white;">#8A6630</div></div>
+    <div class="scale-chip" style="background:#5E4520;"><div class="scale-stop" style="color:rgba(255,255,255,0.5);">600</div><div class="scale-hex" style="color:white;">#5E4520</div></div>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top:32px;"><div class="eyebrow-rule"></div><span class="eyebrow-label">Editorial Accents</span></div>
+  <div class="scale-row">
+    <div class="scale-chip" style="background:#FFFFFF;border:1px solid rgba(11,30,51,0.12);"><div class="scale-stop">Surface</div><div class="scale-hex">#FFFFFF</div></div>
+    <div class="scale-chip" style="background:#F4EFE6;border:1px solid rgba(11,30,51,0.12);"><div class="scale-stop">Paper</div><div class="scale-hex">#F4EFE6</div></div>
+    <div class="scale-chip" style="background:#EAE3D5;border:1px solid rgba(11,30,51,0.12);"><div class="scale-stop">Bone</div><div class="scale-hex">#EAE3D5</div></div>
+    <div class="scale-chip" style="background:#5C6E5A;"><div class="scale-stop" style="color:rgba(255,255,255,0.5);">Sage · Edit</div><div class="scale-hex" style="color:white;">#5C6E5A</div></div>
+    <div class="scale-chip" style="background:#A85638;"><div class="scale-stop" style="color:rgba(255,255,255,0.5);">Terra · Edit</div><div class="scale-hex" style="color:white;">#A85638</div></div>
+    <div class="scale-chip" style="background:#C9D2DA;"><div class="scale-stop">Fog · Diagram</div><div class="scale-hex">#C9D2DA</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     06 PROPORTION
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">06</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Proportion</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">50 · 30 · 20.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">Color is a rhythm, not a recipe. On any composition that stretches more than one screen, the navy/paper/brass split should hold to roughly half navy, a third paper, a fifth brass — and brass should never be the surface, only the accent.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+  <div class="proportion-bar">
+    <div class="prop-seg prop-navy">Midnight Navy · 50</div>
+    <div class="prop-seg prop-paper">Paper · 30</div>
+    <div class="prop-seg prop-brass">Brass · 20</div>
+  </div>
+  <div>
+    <div class="prop-desc">
+      <div class="prop-desc-label">Navy · 50%</div>
+      <div class="prop-desc-body">Anchor surface. Hero, feature pillars, CTA bands, footers. Use as a full-width band that frames the editorial sections.</div>
+    </div>
+    <div class="prop-desc">
+      <div class="prop-desc-label">Paper · 30%</div>
+      <div class="prop-desc-body">Editorial canvas. Where the reading happens — body copy, headings, mode cards, key features. Bone is the second-layer paper for nested blocks.</div>
+    </div>
+    <div class="prop-desc">
+      <div class="prop-desc-label">Brass · 20%</div>
+      <div class="prop-desc-body">Focal only. Eyebrows, icon containers, the 2 px top-rule on cards, primary CTAs, editorial italics. One focal point per view.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHOTO SPREAD 2 -->
+<div style="position:relative;">
+  <div class="photo-placeholder" style="aspect-ratio:21/8;">
+    <span class="photo-caption">D E T A I L &nbsp; · &nbsp; A N T H R A C I T E &nbsp; F R A M E , &nbsp; N O R T H E R N &nbsp; C A L I F O R N I A</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     07 TYPOGRAPHY
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">07</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Type</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">A serif &amp; a sans, in conversation.</h2>
+  <p class="lede" style="max-width:620px;margin-bottom:48px;">Playfair Display gives the brand its editorial breath — product names, section titles, italics. DM Sans does the work — taglines, eyebrows, body, buttons, captions. The pairing creates the rhythm: an engineered voice with an editorial cadence.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+
+  <div class="type-specimen">
+    <div class="type-label">Display</div>
+    <div style="font-family:var(--serif);font-size:72px;font-weight:500;line-height:1;">Aa<span style="color:var(--brass);font-style:italic;">a</span></div>
+    <h3 style="font-family:var(--serif);font-size:28px;font-weight:400;margin-top:20px;margin-bottom:8px;">Playfair Display</h3>
+    <p class="body-text">A transitional serif drawn by Claus Eggers Sørensen, with high stroke contrast and pronounced bracketed serifs. Used at 500 weight for product names and editorial titles; italics carry editorial highlights in brass.</p>
+    <div class="type-spec" style="margin-top:16px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 — . , : ; &amp; ! ? <em style="color:var(--brass);">italic</em></div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-label">Body &amp; UI</div>
+    <div style="font-family:var(--sans);font-size:72px;font-weight:400;line-height:1;">Aa<span style="color:var(--brass);font-weight:700;">a</span></div>
+    <h3 style="font-family:var(--sans);font-size:28px;font-weight:400;margin-top:20px;margin-bottom:8px;">DM Sans</h3>
+    <p class="body-text">A low-contrast geometric sans by Colophon Foundry, designed by Indian Type Foundry for Google. Tracked +8–22% in caps is the workhorse heading. Set body at 400, 1.6 line-height, max 60 ch.</p>
+    <div class="type-spec" style="margin-top:16px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 — . , : ; &amp; ? · → ≤ ≥</div>
+  </div>
+
+  <div style="margin-top:40px;">
+    <div class="section-eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-label">Scale — From hero to caption</span></div>
+    <div style="padding:32px 0;border-top:1px solid rgba(11,30,51,0.1);">
+      <div class="type-spec">Display 1 · Playfair 500 · 96/100 px · −2% tracking · Hero headlines, product names</div>
+      <div style="font-family:var(--serif);font-size:56px;font-weight:500;line-height:1.05;letter-spacing:-0.02em;margin-top:8px;">6500 RPT.</div>
+    </div>
+    <div style="padding:32px 0;border-top:1px solid rgba(11,30,51,0.1);">
+      <div class="type-spec">Display 2 · Playfair 500 · 72/76 px · −2% tracking · Section openers</div>
+      <div style="font-family:var(--serif);font-size:40px;font-weight:500;line-height:1.08;margin-top:8px;">One window. Three modes.</div>
+    </div>
+    <div style="padding:32px 0;border-top:1px solid rgba(11,30,51,0.1);">
+      <div class="type-spec">Display 3 · Playfair 500 · 56/60 px · −1.5%</div>
+      <div style="font-family:var(--serif);font-size:32px;font-weight:500;line-height:1.12;margin-top:8px;">Engineered for comfort.</div>
+    </div>
+    <div style="padding:32px 0;border-top:1px solid rgba(11,30,51,0.1);">
+      <div class="type-spec">Tagline · DM Sans 700 · 32 px · uppercase · +4% · Period required</div>
+      <div style="font-family:var(--sans);font-size:24px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;margin-top:8px;">Built to last.</div>
+    </div>
+    <div style="padding:32px 0;border-top:1px solid rgba(11,30,51,0.1);">
+      <div class="type-spec">Eyebrow · DM Sans 600 · 12 px · uppercase · +22% · Always brass · never alone</div>
+      <div class="eyebrow-label" style="margin-top:8px;">Performance you can feel</div>
+    </div>
+    <div style="padding:32px 0;border-top:1px solid rgba(11,30,51,0.1);">
+      <div class="type-spec">Body · DM Sans 400 · 16/26 px · Default reading</div>
+      <p class="body-text" style="margin-top:8px;">The polyamide strip separates the inner and outer aluminum profiles, breaking the thermal bridge. Heat stays inside in winter and outside in summer. The same break also prevents condensation forming on the inner frame in cold weather.</p>
+    </div>
+    <div style="padding:32px 0;border-top:1px solid rgba(11,30,51,0.1);">
+      <div class="type-spec">Caption · DM Sans 400 · 12 px · Image captions, footnotes</div>
+      <div class="caption" style="margin-top:8px;">Residence · Sierra Madre, 2024 · 6500 RPT installation, anthracite finish</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     08 VOICE
+══════════════════════════════════════════ -->
+<div class="navy-panel">
+  <div class="page" style="background:transparent;padding-top:0;padding-bottom:0;">
+    <div class="section-header"><span class="section-number" style="color:var(--brass);">08</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Voice</span></div>
+    <h2 class="display-3" style="color:white;margin-bottom:20px;">How we write.</h2>
+    <p class="lede" style="max-width:620px;margin-bottom:48px;">The brochure writes like a product engineer with a tagline writer over their shoulder: every claim is a measurable spec, dressed up in tight, punchy phrasing. The body explains <em style="color:var(--brass);">why</em> the feature matters, in one sentence.</p>
+    <hr class="divider" style="border-color:rgba(255,255,255,0.1);">
+    <div class="voice-grid">
+      <div>
+        <div class="voice-number">01</div>
+        <h3 class="voice-heading">Engi<span class="italic-brass">n</span>eered</h3>
+        <p class="voice-body">Every claim earns its place by referencing a mechanism — polyamide break, multi-point lock, profile geometry. We write from the inside out.</p>
+      </div>
+      <div>
+        <div class="voice-number">02</div>
+        <h3 class="voice-heading">Per<span class="italic-brass">f</span>ormance-led</h3>
+        <p class="voice-body">Outcomes over adjectives. "Reduces heat transfer" — not "premium thermal experience." If you can't measure it, don't claim it.</p>
+      </div>
+      <div>
+        <div class="voice-number">03</div>
+        <h3 class="voice-heading">Con<span class="italic-brass">f</span>ident</h3>
+        <p class="voice-body">Short tagline. Period. No qualifiers, no superlatives, no exclamation marks. The product carries the weight; the copy steps aside.</p>
+      </div>
+      <div>
+        <div class="voice-number">04</div>
+        <h3 class="voice-heading">Spe<span class="italic-brass">c</span>ific</h3>
+        <p class="voice-body">Digits, units, materials. <em style="color:var(--brass);">34 mm, ≤ 1.4 W/m²K, 48 hours.</em> Use the non-breaking space between value and unit. Always.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MECHANICS -->
+<div class="page" style="background:var(--bone);">
+  <div class="section-eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-label">Mechanics</span></div>
+  <h2 class="display-3" style="margin-bottom:32px;">Six rules that hold the voice together.</h2>
+  <div>
+    <div style="border-top:2px solid var(--brass);padding:20px 0;border-bottom:1px solid rgba(11,30,51,0.12);">
+      <div class="eyebrow-label" style="margin-bottom:8px;">01 — First-Person Plural</div>
+      <p class="body-text">"Our advanced RPT design uses…" — never second-person, except in CTAs ("Request a quote").</p>
+    </div>
+    <div style="padding:20px 0;border-bottom:1px solid rgba(11,30,51,0.12);">
+      <div class="eyebrow-label" style="margin-bottom:8px;">02 — Headlines Come in Pairs</div>
+      <p class="body-text">A short tagline ("ENGINEERED FOR NORTH AMERICAN CLIMATES. BUILT TO LAST.") followed by a descriptive line. The tagline does the work; the line below adds dimension.</p>
+    </div>
+    <div style="padding:20px 0;border-bottom:1px solid rgba(11,30,51,0.12);">
+      <div class="eyebrow-label" style="margin-bottom:8px;">03 — Periods, Not Exclamations</div>
+      <p class="body-text">End every headline phrase with a period — even single-word ones. <em>Never</em> use exclamation marks. Em dashes break up technical descriptions.</p>
+    </div>
+    <div style="padding:20px 0;border-bottom:1px solid rgba(11,30,51,0.12);">
+      <div class="eyebrow-label" style="margin-bottom:8px;">04 — Numbers Are Digits</div>
+      <p class="body-text">"34 mm polyamide", "≤ 1.4 W/m²K", "48 hours". Always include units. Always use the non-breaking space between value and unit.</p>
+    </div>
+    <div style="padding:20px 0;border-bottom:1px solid rgba(11,30,51,0.12);">
+      <div class="eyebrow-label" style="margin-bottom:8px;">05 — Acronyms Spelled, Then Short</div>
+      <p class="body-text">"Reduced Pressure Technology (RPT)" on first use. After that, "RPT". Same rule for U-value, RAL, AAMA, ENERGY STAR®.</p>
+    </div>
+    <div style="padding:20px 0;border-bottom:1px solid rgba(11,30,51,0.12);">
+      <div class="eyebrow-label" style="margin-bottom:8px;">06 — No Emoji. Ever.</div>
+      <p class="body-text">Not in marketing, not in product, not in social, not in commit logs. The brand expresses warmth through brass and Playfair italic — not through symbols.</p>
+    </div>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top:48px;"><div class="eyebrow-rule"></div><span class="eyebrow-label">Before · After</span></div>
+  <h2 class="display-3" style="margin-bottom:32px;">Same idea, two ways to write it.</h2>
+
+  <div class="ba-pair">
+    <div class="ba-label" style="color:var(--terra);">Off-Voice</div>
+    <div class="ba-off">"Premium luxury windows you'll love."<br><small style="opacity:0.7;">Adjective-stacked. Second-person. No proof.</small></div>
+    <div class="ba-label" style="color:var(--sage);margin-top:12px;">On-Voice</div>
+    <div class="ba-on">"Engineered for comfort. Built to last."<br><small style="opacity:0.7;">Two outcomes, two periods. The proof lives in the spec below.</small></div>
+  </div>
+
+  <div class="ba-pair">
+    <div class="ba-label" style="color:var(--terra);">Off-Voice</div>
+    <div class="ba-off">"Stay warmer in winter with our amazing technology!"<br><small style="opacity:0.7;">Excited. Vague. Reaches for the reader.</small></div>
+    <div class="ba-label" style="color:var(--sage);margin-top:12px;">On-Voice</div>
+    <div class="ba-on">"Polyamide thermal break reduces heat transfer and improves insulation."<br><small style="opacity:0.7;">Mechanism · outcome · outcome. One sentence, no decoration.</small></div>
+  </div>
+
+  <!-- Vocabulary -->
+  <div class="word-grid" style="margin-top:48px;">
+    <div>
+      <div class="word-col-label">In Voice</div>
+      <ul class="word-list">
+        <li>Engineered</li>
+        <li>Polyamide</li>
+        <li>Anthracite</li>
+        <li>Casement</li>
+        <li>Tilt-turn</li>
+        <li>Multi-point</li>
+        <li>Tolerance</li>
+        <li>U-value</li>
+        <li>Profile</li>
+        <li>Glazing</li>
+        <li>Aluminum</li>
+        <li>Refined</li>
+      </ul>
+    </div>
+    <div>
+      <div class="word-col-label" style="border-color:var(--terra);color:var(--terra);">Out of Voice</div>
+      <ul class="word-list">
+        <li class="strike">Premium</li>
+        <li class="strike">Luxury</li>
+        <li class="strike">Amazing</li>
+        <li class="strike">Best-in-class</li>
+        <li class="strike">Game-changing</li>
+        <li class="strike">Innovative</li>
+        <li class="strike">Revolutionary</li>
+        <li class="strike">You'll love</li>
+        <li class="strike">Seamless</li>
+        <li class="strike">Cutting-edge</li>
+        <li class="strike">Elevate</li>
+        <li class="strike">Unleash</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     09 ICONOGRAPHY
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">09</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Iconography</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">Brass circles &amp; dashed hinges.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">The brand uses two icon vocabularies. Feature icons sit inside a 44–48 px brass circle. Mode diagrams are line drawings of the window itself, with brass dashed lines indicating hinge direction. Both are drawn at 24 px with a 1.5 px stroke and square caps.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+
+  <div class="section-eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-label">Feature Icons · Brass on Navy</span></div>
+  <div class="icon-grid" style="margin-top:16px;">
+    <div class="icon-cell">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><polyline points="6 8 12 2 18 8"/><polyline points="6 16 12 22 18 16"/></svg>
+      </div>
+      <div class="icon-name">Thermal</div>
+      <div class="icon-desc">Polyamide break, low U-value</div>
+    </div>
+    <div class="icon-cell">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6 9 6 15 12 22C18 15 18 9 12 2Z"/></svg>
+      </div>
+      <div class="icon-name">Weather</div>
+      <div class="icon-desc">Wind, rain, infiltration</div>
+    </div>
+    <div class="icon-cell">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="icon-name">Secure</div>
+      <div class="icon-desc">Multi-point locking</div>
+    </div>
+    <div class="icon-cell">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="15.54" y1="8.46" x2="15.54" y2="8.46"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+      </div>
+      <div class="icon-name">Quiet</div>
+      <div class="icon-desc">Acoustic insulation</div>
+    </div>
+    <div class="icon-cell icon-cell-wide">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="icon-name">Lasting</div>
+      <div class="icon-desc">Corrosion resistance</div>
+    </div>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top:40px;"><div class="eyebrow-rule"></div><span class="eyebrow-label">Mode Diagrams · Operating Positions</span></div>
+  <div class="mode-grid" style="margin-top:16px;">
+    <div class="mode-cell">
+      <div class="mode-diagram">
+        <svg viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="60" height="76" stroke="#0B1E33" stroke-width="1.5"/>
+          <rect x="10" y="10" width="44" height="60" stroke="#0B1E33" stroke-width="1.5"/>
+          <line x1="10" y1="10" x2="54" y2="18" stroke="#B08544" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="10" y1="70" x2="10" y2="10" stroke="#0B1E33" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="mode-name">Tilt</div>
+      <div class="mode-desc">Top tilts inward for secure ventilation. Hinges at the base.</div>
+    </div>
+    <div class="mode-cell">
+      <div class="mode-diagram">
+        <svg viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="60" height="76" stroke="#0B1E33" stroke-width="1.5"/>
+          <rect x="10" y="10" width="44" height="60" stroke="#0B1E33" stroke-width="1.5"/>
+          <line x1="54" y1="10" x2="20" y2="40" stroke="#B08544" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="54" y1="70" x2="54" y2="10" stroke="#0B1E33" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="mode-name">Turn</div>
+      <div class="mode-desc">Side opens inward for cleaning &amp; maximum airflow.</div>
+    </div>
+    <div class="mode-cell">
+      <div class="mode-diagram">
+        <svg viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="60" height="76" stroke="#0B1E33" stroke-width="1.5"/>
+          <rect x="10" y="10" width="44" height="60" stroke="#0B1E33" stroke-width="1.5"/>
+          <circle cx="58" cy="40" r="3" fill="#B08544"/>
+        </svg>
+      </div>
+      <div class="mode-name">Closed</div>
+      <div class="mode-desc">Sealed tight. Multi-point lock engaged at brass dot.</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;">
+    <div style="border-top:2px solid var(--brass);padding-top:16px;">
+      <div class="eyebrow-label" style="margin-bottom:10px;">Rules · Always</div>
+      <p class="body-text">24 px on a 24 px grid · 1.5 px stroke · square caps · miter joins · feature icons live inside a brass circle, never alone.</p>
+    </div>
+    <div style="border-top:1px solid rgba(11,30,51,0.15);padding-top:16px;">
+      <div class="eyebrow-label" style="color:var(--terra);margin-bottom:10px;">Avoid · Never</div>
+      <p class="body-text">Filled icons · two-tone treatments · rounded-end strokes · Heroicons solid · Material Symbols · duotone · emoji.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     10 PHOTOGRAPHY
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">10</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Photography</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">Architecture, in daylight.</h2>
+  <p class="lede" style="max-width:620px;margin-bottom:48px;">All Scenic Windows imagery is real North American installations, shot in cool natural daylight. Frames read as anthracite black aluminum — that's the product. Brass is the brand color, never the frame color. Four shot types carry the system.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+  <div class="photo-grid-4">
+    <div class="photo-slot" style="background:#1a2a3a;">
+      <div class="photo-slot-label"><span class="photo-slot-num">01</span>Architectural Elevation</div>
+    </div>
+    <div class="photo-slot" style="background:#1e2e40;">
+      <div class="photo-slot-label"><span class="photo-slot-num">02</span>In Context with Site</div>
+    </div>
+    <div class="photo-slot" style="background:#152030;">
+      <div class="photo-slot-label"><span class="photo-slot-num">03</span>Glazing Detail</div>
+    </div>
+    <div class="photo-slot" style="background:#1c2c3c;">
+      <div class="photo-slot-label"><span class="photo-slot-num">04</span>Living Perspective</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;">
+    <div style="border-top:2px solid var(--brass);padding-top:16px;">
+      <div class="eyebrow-label" style="margin-bottom:10px;">Always</div>
+      <p class="body-text">Daytime · cool natural light · sky present where possible · anthracite frames · 3:4 or 4:3 ratios · brass L-brackets at top-left and bottom-right of hero crops.</p>
+    </div>
+    <div style="border-top:1px solid rgba(11,30,51,0.15);padding-top:16px;">
+      <div class="eyebrow-label" style="color:var(--terra);margin-bottom:10px;">Never</div>
+      <p class="body-text">HDR over-saturation · golden-hour tints that imply brass frames · staged interiors with stock furniture · windows extracted from architecture · filtered or color-graded warmth.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     11 GRID
+══════════════════════════════════════════ -->
+<div class="page" style="background:var(--bone);">
+  <div class="section-header"><span class="section-number">11</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Layout</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">12 columns, generous gutters.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">Marketing pages run a 12-column grid at 1280 px max width. Section padding is 96 px top and bottom; 80 px on CTA bands. Editorial blocks use 5:7 asymmetric splits — never 50/50.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+  <div class="grid-demo">
+    <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+    <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+    <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+  </div>
+  <div class="grid-stats">
+    <div class="grid-stat">
+      <div class="grid-stat-label">Max Width</div>
+      <div class="grid-stat-value">1280<span class="grid-stat-unit">px</span></div>
+    </div>
+    <div class="grid-stat">
+      <div class="grid-stat-label">Columns</div>
+      <div class="grid-stat-value">12</div>
+    </div>
+    <div class="grid-stat">
+      <div class="grid-stat-label">Gutter</div>
+      <div class="grid-stat-value">32<span class="grid-stat-unit">px</span></div>
+    </div>
+    <div class="grid-stat">
+      <div class="grid-stat-label">Page Padding</div>
+      <div class="grid-stat-value">40<span class="grid-stat-unit">px</span></div>
+    </div>
+  </div>
+
+  <div class="section-eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-label">Spacing · 4-px Base</span></div>
+  <div class="spacing-bar-row">
+    <div class="spacing-col"><div class="spacing-bar" style="height:4px;"></div><div class="spacing-val">4</div></div>
+    <div class="spacing-col"><div class="spacing-bar" style="height:8px;"></div><div class="spacing-val">8</div></div>
+    <div class="spacing-col"><div class="spacing-bar" style="height:12px;"></div><div class="spacing-val">12</div></div>
+    <div class="spacing-col"><div class="spacing-bar" style="height:16px;"></div><div class="spacing-val">16</div></div>
+    <div class="spacing-col"><div class="spacing-bar" style="height:24px;"></div><div class="spacing-val">24</div></div>
+    <div class="spacing-col"><div class="spacing-bar" style="height:32px;"></div><div class="spacing-val">32</div></div>
+    <div class="spacing-col"><div class="spacing-bar" style="height:48px;"></div><div class="spacing-val">48</div></div>
+    <div class="spacing-col"><div class="spacing-bar" style="height:64px;"></div><div class="spacing-val">64</div></div>
+    <div class="spacing-col"><div class="spacing-bar" style="height:96px;"></div><div class="spacing-val">96</div></div>
+    <div class="spacing-col"><div class="spacing-bar" style="height:128px;"></div><div class="spacing-val">128</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     12 COMPONENTS
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">12</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Components</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">The kit.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">Cards have a 2 px brass top-rule. Buttons are 2 px radius rectangles. Eyebrows are tracked brass caps with a short rule. Hover transitions run 140 ms. Resting cards are flat — the system prefers borders over shadows.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+
+  <div class="eyebrow-label" style="margin-bottom:12px;">Buttons</div>
+  <p class="body-text" style="margin-bottom:20px;">Three variants. Primary brass is the focal CTA — one per view. Outline carries secondary actions. Ghost is for in-line nav.</p>
+  <div class="btn-row">
+    <button class="btn-primary">Request a Quote →</button>
+    <button class="btn-outline">Download Spec Sheet →</button>
+    <button class="btn-ghost">View Installations →</button>
+  </div>
+  <div class="btn-row">
+    <button class="btn-primary">Submit</button>
+  </div>
+
+  <hr class="divider">
+
+  <div class="eyebrow-label" style="margin-bottom:12px;">Editorial Card</div>
+  <p class="body-text" style="margin-bottom:20px;">White on paper · 2 px brass top-rule above the eyebrow · 28–32 px padding · no shadow at rest. The default for modes, features, and callouts.</p>
+  <div class="cards-row">
+    <div class="card-editorial">
+      <div class="card-eyebrow">Performance</div>
+      <div class="card-heading">Superior Thermal</div>
+      <p class="card-body">Polyamide thermal break reduces heat transfer and improves insulation.</p>
+    </div>
+    <div class="card-editorial">
+      <div class="card-eyebrow">Security</div>
+      <div class="card-heading">Multi-Point Lock</div>
+      <p class="card-body">Engages at six points around the sash for enhanced security and peace of mind.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="eyebrow-label" style="margin-bottom:12px;">Trust Badges</div>
+  <p class="body-text" style="margin-bottom:20px;">Four glyphs on navy, brass icon, tracked caps label. Used at the bottom of marketing pages above the footer. 1 px hairline dividers separate cells.</p>
+  <div class="trust-grid">
+    <div class="trust-cell">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="trust-label">North American Built</div>
+    </div>
+    <div class="trust-cell">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="trust-label">Secure &amp; Reliable</div>
+    </div>
+    <div class="trust-cell">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M2 12h4m12 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>
+      </div>
+      <div class="trust-label">Energy Efficient</div>
+    </div>
+    <div class="trust-cell">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      </div>
+      <div class="trust-label">Designed to Inspire</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="eyebrow-label" style="margin-bottom:12px;">Eyebrow + Divider</div>
+  <p class="body-text" style="margin-bottom:20px;">Tracked DM Sans 600 caps in brass · 12 px · paired with a short brass rule. Always precedes a heading — never standalone.</p>
+  <div class="section-eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-label">Performance You Can Feel</span></div>
+  <h3 class="h2">Built for daily use.</h3>
+  <div style="margin-top:24px;" class="section-eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-label">Why Thermal Break</span></div>
+  <h3 class="h2">The 34 <span style="font-family:var(--sans);font-size:0.6em;vertical-align:middle;">mm</span> polyamide strip.</h3>
+
+  <hr class="divider">
+
+  <div class="eyebrow-label" style="margin-bottom:12px;">Radii &amp; Borders</div>
+  <p class="body-text" style="margin-bottom:20px;">2 px on chrome · 4 px on form inputs · 0 px on hero photography · 999 px (pill) only for tags. Borders are hairline — 1 px solid at 12% navy.</p>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <div style="width:56px;height:40px;background:var(--brass);border-radius:2px;"></div>
+    <div style="width:56px;height:40px;background:var(--midnight);border-radius:2px;"></div>
+    <div style="width:56px;height:40px;background:var(--paper);border:1px solid rgba(11,30,51,0.2);border-radius:2px;"></div>
+    <div style="padding:6px 16px;border:1px solid rgba(11,30,51,0.25);border-radius:999px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">In Stock</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     13 MOTION
+══════════════════════════════════════════ -->
+<div class="page" style="background:var(--bone);">
+  <div class="section-header"><span class="section-number">13</span><div class="eyebrow-rule"></div><span class="eyebrow-label">Motion</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">Restrained, never theatrical.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">The brand is engineered, not playful. Three durations cover most cases. Standard ease for everything except modal entrances. No bounces, no springs, no scale-on-hover.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+  <div class="motion-grid">
+    <div class="motion-card">
+      <div class="motion-ms">140 <span class="motion-unit">ms</span></div>
+      <div class="motion-label">Fast — Interaction</div>
+      <p class="motion-desc">Button hover, link hover, color transitions. Standard ease. The user shouldn't notice the animation — only that it feels right.</p>
+    </div>
+    <div class="motion-card">
+      <div class="motion-ms">240 <span class="motion-unit">ms</span></div>
+      <div class="motion-label">Base — Reveal</div>
+      <p class="motion-desc">Section fade-in on scroll, card promotion, accordion expansion. Standard ease.</p>
+    </div>
+    <div class="motion-card motion-card-wide">
+      <div class="motion-ms">420 <span class="motion-unit">ms</span></div>
+      <div class="motion-label">Slow — Emphasis</div>
+      <p class="motion-desc">Quote sheet slide-over, modal entry, page transitions. Emphasis ease for entrances, standard ease for exits.</p>
+    </div>
+  </div>
+  <div class="ease-grid">
+    <div class="ease-box">
+      <div class="ease-name">Standard Ease</div>
+      <div class="ease-code">cubic-bezier(0.22, 0.61, 0.36, 1)</div>
+      <div class="ease-desc">Default for hover, fade, color transitions.</div>
+    </div>
+    <div class="ease-box">
+      <div class="ease-name">Emphasis Ease</div>
+      <div class="ease-code">cubic-bezier(0.16, 1, 0.3, 1)</div>
+      <div class="ease-desc">Used for modal entrances and significant reveals only.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     14 APPLICATIONS
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header"><span class="section-number">14</span><div class="eyebrow-rule"></div><span class="eyebrow-label">The Brand at Work</span></div>
+  <h2 class="display-3" style="margin-bottom:20px;">Applications.</h2>
+  <p class="lede" style="max-width:600px;margin-bottom:48px;">The system was built to live on a business card, a billboard, an Instagram tile, a one-sheet, and a sales email — without negotiating with itself. A short tour.</p>
+  <hr class="divider" style="margin:0 0 40px;">
+
+  <!-- Spec Sheet -->
+  <div style="border:1px solid rgba(11,30,51,0.12);margin-bottom:16px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+      <div style="padding:0;background:var(--midnight-700);aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;">
+        <div style="width:60%;height:60%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"></div>
+      </div>
+      <div style="padding:32px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div class="eyebrow-label" style="margin-bottom:12px;">6500 RPT · Spec Sheet</div>
+          <div style="font-family:var(--serif);font-size:28px;font-weight:500;">Casement <span class="italic-brass">Tilt-Turn</span></div>
+          <p class="body-text" style="margin-top:8px;">North American precision. Everyday performance.</p>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:24px;">
+          <button class="btn-primary" style="font-size:10px;">Inside →</button>
+        </div>
+      </div>
+    </div>
+    <div style="padding:8px 16px;border-top:1px solid rgba(11,30,51,0.1);background:var(--bone);">
+      <span class="caption">Trifold · Front</span>
+    </div>
+  </div>
+
+  <!-- Instagram + Business Card row -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+
+    <!-- Instagram -->
+    <div>
+      <div class="instagram-tile">
+        <div class="instagram-content">
+          <div class="eyebrow-label" style="margin-bottom:12px;">6500 RPT · Performance</div>
+          <div style="font-family:var(--serif);font-size:28px;color:white;line-height:1.15;">Engineered for comfort.<br><span class="italic-brass">Built to last.</span></div>
+          <div style="font-family:var(--sans);font-size:10px;letter-spacing:0.15em;color:rgba(255,255,255,0.4);margin-top:16px;">SCENICWINDOWS.COM</div>
+        </div>
+      </div>
+      <div style="padding:8px 16px;border:1px solid rgba(11,30,51,0.1);background:var(--bone);">
+        <span class="caption">Instagram · 1080 × 1080</span>
+      </div>
+    </div>
+
+    <!-- Transactional Email + Sticker stacked -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="email-mock">
+        <div class="email-header">
+          <svg width="24" height="28" viewBox="0 0 56 64" fill="none"><rect x="1.5" y="1.5" width="53" height="61" stroke="#0B1E33" stroke-width="1.5"/><rect x="9" y="9" width="38" height="46" stroke="#0B1E33" stroke-width="1.5"/><line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/></svg>
+          <div><div style="font-family:var(--serif);font-size:16px;letter-spacing:0.2em;">SCENIC</div><div style="font-family:var(--sans);font-size:7px;letter-spacing:0.35em;margin-top:2px;">WINDOWS</div></div>
+        </div>
+        <div class="eyebrow-label" style="margin-bottom:8px;">Your Quote is Ready</div>
+        <div style="font-family:var(--serif);font-size:20px;margin-bottom:4px;">One window.</div>
+        <div style="font-family:var(--serif);font-size:20px;margin-bottom:12px;"><span class="italic-brass">Three modes.</span></div>
+        <p class="body-text" style="font-size:13px;margin-bottom:16px;">Polyamide thermal break, multi-point locking, anthracite frame. Drawings and pricing attached for review.</p>
+        <button class="btn-primary" style="font-size:10px;">View Quote →</button>
+      </div>
+      <div style="padding:8px 16px;border:1px solid rgba(11,30,51,0.1);background:var(--bone);">
+        <span class="caption">Transactional Email</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Business Card + Sticker -->
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:16px;">
+    <div>
+      <div class="biz-card">
+        <div class="biz-card-left">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+            <svg width="20" height="24" viewBox="0 0 56 64" fill="none"><rect x="1.5" y="1.5" width="53" height="61" stroke="#B08544" stroke-width="1.5"/><rect x="9" y="9" width="38" height="46" stroke="white" stroke-width="1.5"/><line x1="47" y1="32" x2="55.5" y2="32" stroke="#B08544" stroke-width="1.5"/></svg>
+            <div><div style="font-family:var(--serif);font-size:14px;letter-spacing:0.2em;color:white;">SCENIC</div><div style="font-family:var(--sans);font-size:6px;letter-spacing:0.35em;color:var(--brass);margin-top:2px;">WINDOWS</div></div>
+          </div>
+          <div class="biz-name">Jordan Mitchell</div>
+          <div class="biz-role">Director · Specifications</div>
+        </div>
+        <div class="biz-right">
+          <div class="biz-contact">+1 (604) 555-0187<br>jordan@scenicwindows.com</div>
+        </div>
+      </div>
+      <div style="padding:8px 16px;border:1px solid rgba(11,30,51,0.1);background:var(--bone);">
+        <span class="caption">Business Card · 85 × 55 mm</span>
+      </div>
+    </div>
+
+    <div>
+      <div style="padding:24px;border:1px solid rgba(11,30,51,0.12);background:var(--white);display:flex;flex-direction:column;align-items:center;">
+        <div class="sticker">
+          <div class="sticker-top">Quality Certified</div>
+          <div class="sticker-model">6500 <span>RPT</span></div>
+          <div class="sticker-spec">U-Value ≤ 1.4 W/m²K</div>
+          <div class="sticker-sn">SN · 0067·2026·NA<br>Lot · 24·B·11</div>
+        </div>
+      </div>
+      <div style="padding:8px 16px;border:1px solid rgba(11,30,51,0.1);background:var(--bone);">
+        <span class="caption">Frame Quality Sticker</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL PHOTO -->
+<div style="position:relative;">
+  <div class="photo-placeholder" style="aspect-ratio:21/9;">
+    <span class="photo-caption">L I V I N G &nbsp; P E R S P E C T I V E &nbsp; · &nbsp; D A Y L I G H T , &nbsp; A N T H R A C I T E , &nbsp; P A C I F I C &nbsp; N O R T H W E S T</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     COLOPHON
+══════════════════════════════════════════ -->
+<div class="colophon">
+  <div class="section-eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-label" style="color:var(--brass-300);">In Closing</span></div>
+  <h2 class="display-3" style="color:white;margin-top:16px;">This book is a working reference, not a finish line.</h2>
+  <p class="body-text" style="color:rgba(255,255,255,0.5);margin-top:16px;max-width:600px;">When in doubt, fewer adjectives. More periods. Bigger margins. Lift the brass to one focal moment. Let the window be the work.</p>
+
+  <div class="colophon-grid">
+    <div>
+      <div class="colophon-col-label">Stewardship</div>
+      <div class="colophon-text">The Scenic Windows brand is maintained by the design team in North America. Submit requests for asset variations, co-branding lockups, or new applications by email.<br><br><a href="mailto:brand@scenicwindows.com">brand@scenicwindows.com</a></div>
+    </div>
+    <div>
+      <div class="colophon-col-label">Edition</div>
+      <div class="colophon-text">
+        <strong>Document</strong> SW-BR-001<br>
+        <strong>Volume</strong> 01<br>
+        <strong>Issued</strong> 14 · 05 · 2026<br>
+        <strong>Sections</strong> 14<br>
+        <strong>Revision</strong> 1.1 — North American Edition
+      </div>
+    </div>
+    <div>
+      <div class="colophon-col-label">Set in</div>
+      <div class="colophon-text">
+        <strong>Playfair Display</strong><br>By Claus Eggers Sørensen.<br><br>
+        <strong>DM Sans</strong><br>By Colophon Foundry &amp; Indian Type Foundry, for Google.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BACK COVER -->
+<div class="back-cover">
+  <div class="back-cover-text">S C E N I C &nbsp; W I N D O W S &nbsp; · &nbsp; B R A N D &nbsp; &amp; &nbsp; G U I D E L I N E S</div>
+  <div class="back-cover-text">S W - B R - 0 0 1 &nbsp; · &nbsp; V 1 . 1 &nbsp; · &nbsp; 2 0 2 6</div>
+</div>
+
+</body>
+</html>
