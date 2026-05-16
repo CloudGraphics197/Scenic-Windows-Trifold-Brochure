@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scenic Windows — 6500 RPT Trifold Brochure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:     #0B1E33;
+      --deep:     #060F1C;
+      --paper:    #F4EFE6;
+      --bone:     #EAE3D5;
+      --brass:    #B08544;
+      --brass-lt: #D4B274;
+      --serif:    'Playfair Display', Georgia, serif;
+      --sans:     'DM Sans', sans-serif;
+    }
+
+    body {
+      background: #BEB8B0;
+      font-family: var(--sans);
+      padding: 40px 24px 56px;
+      min-height: 100vh;
+    }
+
+    /* ── Print styles ── */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page-label, .print-btn { display: none; }
+      .side { box-shadow: none; }
+      .brochure-wrap { gap: 0; }
+      /* Each side on its own page */
+      .side + .page-label + .side { page-break-before: always; }
+    }
+
+    /* ── Layout chrome ── */
+    .brochure-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .page-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.35);
+      text-align: center;
+      margin-bottom: -36px;
+    }
+
+    .print-btn {
+      display: block;
+      margin: 0 auto 8px;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--brass);
+      color: #fff;
+      border: none;
+      padding: 11px 24px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    /* ── Brochure structure ── */
+    .side {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.26);
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fold-line {
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+    .fold-line.top    { top: 0; }
+    .fold-line.bottom { bottom: 0; }
+
+    /* ── Bracket corners ── */
+    .bracket-tl {
+      position: absolute; top: 18px; left: 18px;
+      width: 26px; height: 26px;
+      border-top: 1px solid var(--brass);
+      border-left: 1px solid var(--brass);
+    }
+    .bracket-br {
+      position: absolute; bottom: 18px; right: 18px;
+      width: 26px; height: 26px;
+      border-bottom: 1px solid var(--brass);
+      border-right: 1px solid var(--brass);
+    }
+
+    /* ── Eyebrow ── */
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .eyebrow-rule {
+      width: 24px; height: 1px;
+      background: var(--brass);
+      flex-shrink: 0;
+    }
+    .eyebrow-text {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    /* ── Typography helpers ── */
+    .display {
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1.1;
+      color: #fff;
+    }
+    .display em { font-style: italic; color: var(--brass-lt); }
+
+    .display-navy {
+      font-family: var(--serif);
+      font-size: 26px;
+      line-height: 1.15;
+      color: var(--navy);
+    }
+    .display-navy em { font-style: italic; color: var(--brass); }
+
+    .tagline {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: 8px;
+    }
+
+    /* ── Stat row ── */
+    .stat-row {
+      display: flex;
+      gap: 32px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 18px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .stat-val {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-unit {
+      font-family: var(--sans);
+      font-size: 10px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+    }
+    .stat-label {
+      font-family: var(--sans);
+      font-size: 9px;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* ── Feature items ── */
+    .feat {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(11,30,51,0.1);
+    }
+    .feat:first-of-type { border-top: 1px solid rgba(11,30,51,0.1); }
+    .feat-title {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+    .feat-body {
+      font-family: var(--sans);
+      font-size: 11px;
+      line-height: 1.65;
+      color: rgba(11,30,51,0.58);
+    }
+
+    /* ── Mode items ── */
+    .mode-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mode-item:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+    .mode-label {
+      font-family: var(--sans);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 2px;
+    }
+    .mode-name {
+      font-family: var(--serif);
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .mode-desc {
+      font-family: var(--sans);
+      font-size: 10px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.48);
+    }
+
+    /* ── Spec table ── */
+    .spec-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(11,30,51,0.1);
+    }
+    .spec-line:last-child { border-bottom: none; }
+    .spec-key {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(11,30,51,0.4);
+    }
+    .spec-val {
+      font-family: var(--serif);
+      font-size: 14px;
+      color: var(--navy);
+    }
+    .spec-val.sans {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* ── Cert badge ── */
+    .cert-badge {
+      border: 1px solid rgba(176,133,68,0.3);
+      padding: 12px 14px;
+    }
+    .cert-top {
+      font-family: var(--sans);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 4px;
+    }
+    .cert-num {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .cert-sub {
+      font-family: var(--sans);
+      font-size: 9px;
+      color: rgba(11,30,51,0.45);
+      margin-top: 3px;
+    }
+    .cert-sn {
+      font-family: var(--sans);
+      font-size: 8px;
+      color: rgba(11,30,51,0.28);
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Navy CTA block ── */
+    .cta-block {
+      background: var(--navy);
+      padding: 14px 16px;
+    }
+    .cta-block-label {
+      font-family: var(--sans);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 5px;
+    }
+    .cta-block-body {
+      font-family: var(--sans);
+      font-size: 10px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── Trust badges ── */
+    .badge-mini {
+      background: var(--navy);
+      padding: 8px 12px;
+    }
+    .badge-mini-label {
+      font-family: var(--sans);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 3px;
+    }
+    .badge-mini-body {
+      font-family: var(--sans);
+      font-size: 10px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── Logo mark ── */
+    .logo-scenic {
+      font-family: var(--serif);
+      font-size: 20px;
+      letter-spacing: 0.26em;
+      color: #fff;
+      line-height: 1;
+    }
+    .logo-windows {
+      font-family: var(--sans);
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.38);
+      margin-top: 4px;
+    }
+
+    /* ── Grid helpers ── */
+    .grid-2 { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap: 24px; }
+    .grid-12 { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,2fr); gap: 32px; align-items: start; }
+    .grid-12r { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 32px; align-items: start; }
+    .flex-col { display: flex; flex-direction: column; }
+    .jc-sb { justify-content: space-between; }
+    .h100 { height: 100%; }
+  </style>
+</head>
+<body>
+
+  <div class="brochure-wrap">
+
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF →</button>
+
+    <!-- ═══════════════════════════════════════════
+         OUTSIDE
+    ════════════════════════════════════════════ -->
+    <p class="page-label">Outside — Cover · Back · Flap</p>
+
+    <div class="side">
+
+      <!-- PANEL 1: COVER -->
+      <div class="panel" style="background:var(--deep); padding:36px 40px 32px; min-height:210px; display:flex; flex-direction:column; justify-content:space-between;">
+        <div class="fold-line bottom"></div>
+        <div class="bracket-tl"></div>
+        <div class="bracket-br"></div>
+
+        <!-- Logo -->
+        <div style="display:flex; align-items:center; gap:16px;">
+          <svg width="44" height="52" viewBox="0 0 44 52" fill="none" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="41" height="49" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+            <rect x="7" y="7" width="24" height="38" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+            <line x1="31" y1="21" x2="39" y2="21" stroke="#B08544" stroke-width="1.5"/>
+            <line x1="31" y1="27" x2="39" y2="27" stroke="#B08544" stroke-width="1.5"/>
+            <circle cx="31" cy="24" r="2.2" fill="#B08544"/>
+          </svg>
+          <div>
+            <p class="logo-scenic">SCENIC</p>
+            <p class="logo-windows">WINDOWS</p>
+          </div>
+        </div>
+
+        <!-- Hero copy -->
+        <div>
+          <div class="eyebrow">
+            <div class="eyebrow-rule"></div>
+            <span class="eyebrow-text">6500 RPT · Casement Tilt-Turn</span>
+          </div>
+          <p class="display">One window.<br>Three modes.<br><em>No compromise.</em></p>
+          <p class="tagline">Engineered for comfort. Built to last.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stat-row">
+          <div>
+            <p class="stat-val">34 <span class="stat-unit">mm</span></p>
+            <p class="stat-label">Polyamide break</p>
+          </div>
+          <div>
+            <p class="stat-val">≤ 1.4 <span class="stat-unit">W/m²K</span></p>
+            <p class="stat-label">U-value</p>
+          </div>
+          <div>
+            <p class="stat-val">6</p>
+            <p class="stat-label">Lock points</p>
+          </div>
+          <div>
+            <p class="stat-val">48 <span class="stat-unit">h</span></p>
+            <p class="stat-label">Weather test</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 2: BACK -->
+      <div class="panel" style="background:var(--bone); padding:32px 40px;">
+        <div class="fold-line top"></div>
+        <div class="fold-line bottom"></div>
+        <div class="grid-3">
+
+          <!-- Brand essence -->
+          <div>
+            <div class="eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-text">The brand</span></div>
+            <p class="display-navy" style="font-size:22px; margin-bottom:14px;">The window<br>is the <em>work.</em></p>
+            <p style="font-family:var(--sans); font-size:11px; line-height:1.75; color:rgba(11,30,51,0.62);">Scenic Windows manufactures European-engineered aluminum window systems for residential architecture. We make engineered objects and let them be the hero. The brand is the frame around the frame.</p>
+          </div>
+
+          <!-- Pillars -->
+          <div>
+            <div class="feat">
+              <p class="feat-title">Engineered</p>
+              <p class="feat-body">Every claim is a measurable spec. Tolerances, U-values, thermal break depth, locking points. We earn the words before we use them.</p>
+            </div>
+            <div class="feat">
+              <p class="feat-title">Performance-led</p>
+              <p class="feat-body">Outcomes over adjectives. Comfort, security, and energy are outcomes — never decorative words.</p>
+            </div>
+            <div class="feat" style="border-bottom:none;">
+              <p class="feat-title">Specific</p>
+              <p class="feat-body">34&nbsp;mm polyamide beats "advanced thermal." Numbers, units, materials, mechanisms. The detail is the design.</p>
+            </div>
+          </div>
+
+          <!-- Contact + cert -->
+          <div class="flex-col jc-sb h100">
+            <div>
+              <div class="eyebrow" style="margin-bottom:10px;"><div class="eyebrow-rule"></div><span class="eyebrow-text">Contact</span></div>
+              <p style="font-family:var(--sans); font-size:11px; color:rgba(11,30,51,0.55); line-height:1.9;">brand@scenicwindows.com<br>scenicwindows.com<br>Monterrey, MX</p>
+            </div>
+            <div class="cert-badge" style="margin-top:20px;">
+              <p class="cert-top">Quality certified</p>
+              <p class="cert-num">6500 RPT</p>
+              <p class="cert-sub">U-VALUE ≤ 1.4 W/M²K</p>
+              <p class="cert-sn">SN · 0067·2026·MX · Lot 24·B·11</p>
+            </div>
+            <p style="font-family:var(--sans); font-size:9px; color:rgba(11,30,51,0.28); margin-top:14px; line-height:1.7; letter-spacing:0.06em;">SW-BR-001 · V1.0 · 2026<br>Issued 14 · 05 · 2026</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PANEL 3: FLAP (folds in) -->
+      <div class="panel" style="background:var(--brass); padding:32px 40px;">
+        <div class="fold-line top"></div>
+        <div class="grid-3" style="align-items:center;">
+
+          <div>
+            <p style="font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:12px;">Request a quote</p>
+            <p style="font-family:var(--serif); font-size:24px; line-height:1.2; color:#fff;">Your quote is ready<br><em>within 48 hours.</em></p>
+          </div>
+
+          <p style="font-family:var(--sans); font-size:11px; line-height:1.75; color:rgba(255,255,255,0.7);">Drawings and pricing attached for review. Polyamide thermal break, multi-point locking, anthracite frame. Request at scenicwindows.com or contact your specifications director directly.</p>
+
+          <div>
+            <p style="font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:10px;">Specifications Director</p>
+            <p style="font-family:var(--sans); font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Mariana Salinas</p>
+            <p style="font-family:var(--sans); font-size:11px; color:rgba(255,255,255,0.65); line-height:1.85;">+52 81 1234 5678<br>mariana@scenicwindows.com</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /outside -->
+
+
+    <!-- ═══════════════════════════════════════════
+         INSIDE
+    ════════════════════════════════════════════ -->
+    <p class="page-label">Inside — Modes · Features · Specifications</p>
+
+    <div class="side">
+
+      <!-- PANEL 1: MODES -->
+      <div class="panel" style="background:var(--navy); padding:36px 40px 32px;">
+        <div class="fold-line bottom"></div>
+        <div class="grid-12">
+
+          <!-- Left: headline -->
+          <div>
+            <div class="eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-text">Operating positions</span></div>
+            <p style="font-family:var(--serif); font-size:28px; line-height:1.15; color:#fff; margin-bottom:12px;">Three modes.<br><em style="font-style:italic; color:var(--brass-lt);">One handle.</em></p>
+            <p style="font-family:var(--sans); font-size:11px; line-height:1.7; color:rgba(255,255,255,0.48);">All three positions accessible with a single espagnolette handle. No secondary hardware required. Tilt-turn hardware certified to EN&nbsp;13126.</p>
+          </div>
+
+          <!-- Right: mode diagrams -->
+          <div>
+            <!-- Closed -->
+            <div class="mode-item">
+              <svg width="34" height="42" viewBox="0 0 34 42" fill="none" aria-hidden="true" style="flex-shrink:0; margin-top:3px;">
+                <rect x="1" y="1" width="32" height="40" stroke="rgba(255,255,255,0.38)" stroke-width="1.3"/>
+                <rect x="5" y="5" width="20" height="32" stroke="rgba(255,255,255,0.38)" stroke-width="1.3"/>
+                <line x1="25" y1="18" x2="31" y2="18" stroke="#B08544" stroke-width="1.3"/>
+                <line x1="25" y1="22" x2="31" y2="22" stroke="#B08544" stroke-width="1.3"/>
+                <circle cx="25" cy="20" r="1.8" fill="#B08544"/>
+              </svg>
+              <div>
+                <p class="mode-label">01 · Closed</p>
+                <p class="mode-name">Sealed tight.</p>
+                <p class="mode-desc">Multi-point lock engaged at all six perimeter positions. Full compression seal. Maximum thermal and acoustic performance.</p>
+              </div>
+            </div>
+            <!-- Tilt -->
+            <div class="mode-item">
+              <svg width="34" height="42" viewBox="0 0 34 42" fill="none" aria-hidden="true" style="flex-shrink:0; margin-top:3px;">
+                <rect x="1" y="1" width="32" height="40" stroke="rgba(255,255,255,0.38)" stroke-width="1.3"/>
+                <path d="M5 37 L25 5 L25 37 Z" stroke="rgba(255,255,255,0.32)" stroke-width="1.3" fill="none"/>
+                <line x1="5" y1="37" x2="15" y2="21" stroke="#B08544" stroke-width="1" stroke-dasharray="3 2.5"/>
+                <line x1="25" y1="18" x2="31" y2="18" stroke="#B08544" stroke-width="1.3"/>
+                <line x1="25" y1="22" x2="31" y2="22" stroke="#B08544" stroke-width="1.3"/>
+              </svg>
+              <div>
+                <p class="mode-label">02 · Tilt</p>
+                <p class="mode-name">Secure ventilation.</p>
+                <p class="mode-desc">Top tilts inward on a base hinge. Fresh air enters without compromising weather resistance or security.</p>
+              </div>
+            </div>
+            <!-- Turn -->
+            <div class="mode-item" style="border-bottom:none;">
+              <svg width="34" height="42" viewBox="0 0 34 42" fill="none" aria-hidden="true" style="flex-shrink:0; margin-top:3px;">
+                <rect x="1" y="1" width="32" height="40" stroke="rgba(255,255,255,0.38)" stroke-width="1.3"/>
+                <path d="M25 5 L5 5 L5 37 L25 37" stroke="rgba(255,255,255,0.32)" stroke-width="1.3" fill="none"/>
+                <line x1="5" y1="21" x2="25" y2="21" stroke="#B08544" stroke-width="1" stroke-dasharray="3 2.5"/>
+                <line x1="25" y1="18" x2="31" y2="18" stroke="#B08544" stroke-width="1.3"/>
+                <line x1="25" y1="22" x2="31" y2="22" stroke="#B08544" stroke-width="1.3"/>
+              </svg>
+              <div>
+                <p class="mode-label">03 · Turn</p>
+                <p class="mode-name">Full access.</p>
+                <p class="mode-desc">Side opens fully inward on a vertical stile hinge. Maximum airflow and access for cleaning.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PANEL 2: FEATURES -->
+      <div class="panel" style="background:var(--paper); padding:32px 40px;">
+        <div class="fold-line top"></div>
+        <div class="fold-line bottom"></div>
+
+        <div class="eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-text">Performance you can feel</span></div>
+        <p class="display-navy" style="margin-bottom:20px;">Engineered from the inside <em>out.</em></p>
+
+        <div class="grid-3">
+          <div>
+            <div class="feat">
+              <p class="feat-title">Thermal break</p>
+              <p class="feat-body">The 34&nbsp;mm polyamide strip separates inner and outer aluminum profiles. Heat stays inside in winter and outside in summer. U-value ≤&nbsp;1.4&nbsp;W/m²K.</p>
+            </div>
+            <div class="feat" style="border-bottom:none;">
+              <p class="feat-title">Multi-point locking</p>
+              <p class="feat-body">Six lock points engage around the sash perimeter on a single handle turn. Certified EN&nbsp;1627 burglar resistance.</p>
+            </div>
+          </div>
+          <div>
+            <div class="feat">
+              <p class="feat-title">Acoustic insulation</p>
+              <p class="feat-body">Profile geometry and triple-compression seals reduce airborne noise. Traffic, wind, and infiltration held outside the frame.</p>
+            </div>
+            <div class="feat" style="border-bottom:none;">
+              <p class="feat-title">Weather resistance</p>
+              <p class="feat-body">Compression seals on all three sides. Certified at 600&nbsp;Pa over 48 hours of wind-driven rain. Tested, not implied.</p>
+            </div>
+          </div>
+          <div>
+            <div class="feat">
+              <p class="feat-title">Corrosion resistance</p>
+              <p class="feat-body">Anodised and powder-coated aluminum profiles. Anthracite RAL&nbsp;7016. Rated for coastal and high-humidity environments over decades.</p>
+            </div>
+            <div class="feat" style="border-bottom:none;">
+              <p class="feat-title">Profile system</p>
+              <p class="feat-body">6500 RPT geometry optimises drainage, seal compression, and thermal continuity simultaneously. European engineered.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3: SPECIFICATIONS -->
+      <div class="panel" style="background:var(--bone); padding:32px 40px;">
+        <div class="fold-line top"></div>
+        <div class="grid-12r">
+
+          <!-- Left: spec table -->
+          <div>
+            <div class="eyebrow"><div class="eyebrow-rule"></div><span class="eyebrow-text">6500 RPT · Specifications</span></div>
+            <p class="display-navy" style="font-size:22px; margin-bottom:18px;">Casement <em>Tilt-Turn.</em></p>
+
+            <div class="spec-line"><span class="spec-key">Profile system</span><span class="spec-val sans">6500 RPT</span></div>
+            <div class="spec-line"><span class="spec-key">Frame depth</span><span class="spec-val">70 mm</span></div>
+            <div class="spec-line"><span class="spec-key">Thermal break</span><span class="spec-val">34 mm polyamide</span></div>
+            <div class="spec-line"><span class="spec-key">U-value</span><span class="spec-val">≤ 1.4 W/m²K</span></div>
+            <div class="spec-line"><span class="spec-key">Glazing range</span><span class="spec-val sans">24 – 48 mm</span></div>
+            <div class="spec-line"><span class="spec-key">Lock points</span><span class="spec-val">6</span></div>
+            <div class="spec-line"><span class="spec-key">Standard finish</span><span class="spec-val sans">Anthracite RAL 7016</span></div>
+            <div class="spec-line"><span class="spec-key">Weather test</span><span class="spec-val sans">600 Pa · 48 h</span></div>
+          </div>
+
+          <!-- Right: description + trust + CTA -->
+          <div class="flex-col jc-sb h100">
+            <div>
+              <p style="font-family:var(--sans); font-size:11px; line-height:1.75; color:rgba(11,30,51,0.58); margin-bottom:18px;">The full tilt-turn delivers all three operating modes with a single espagnolette handle. European-engineered versatility. Everyday performance.</p>
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <div class="badge-mini">
+                  <p class="badge-mini-label">European engineered</p>
+                  <p class="badge-mini-body">EN 1279 · EN 13126</p>
+                </div>
+                <div class="badge-mini">
+                  <p class="badge-mini-label">Energy efficient</p>
+                  <p class="badge-mini-body">≤ 1.4 W/m²K</p>
+                </div>
+              </div>
+            </div>
+            <div class="cta-block" style="margin-top:20px;">
+              <p class="cta-block-label">Download spec sheet</p>
+              <p class="cta-block-body">Full drawings, tolerances, and RAL options at scenicwindows.com/6500rpt</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /inside -->
+
+  </div><!-- /brochure-wrap -->
+
+</body>
+</html>
